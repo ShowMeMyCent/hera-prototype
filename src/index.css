@@ -1,0 +1,66 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  --color-primary: #0875c9;
+  --color-primary-dark: #065a9e;
+  --color-turquoise: #09b8b8;
+  --color-turquoise-dark: #078080;
+  --color-green: #078b68;
+  --color-green-dark: #056b50;
+  --color-orange: #d97706;
+  --color-red: #d6362f;
+
+  --color-bg: #f5f8f8;
+  --color-surface: #ffffff;
+  --color-text: #17212b;
+  --color-text-secondary: #71838a;
+  --color-border: #e3e9ea;
+
+  --radius-card: 14px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(23, 33, 43, 0.04), 0 2px 8px rgba(23, 33, 43, 0.04);
+  --shadow-card-hover: 0 2px 4px rgba(23, 33, 43, 0.06), 0 8px 20px rgba(23, 33, 43, 0.08);
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-turquoise) 25%, transparent);
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-toast-in {
+  animation: toast-in 0.2s ease-out;
+}
